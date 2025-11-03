@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tournament Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/project.css'%}" >
+  <link rel="stylesheet" href="{% static 'js/project.js'%}" >
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">Tournament Finder</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+           <li class="nav-item"><a class="nav-link" href="user_dashboard">User</a></li>
+          <li class="nav-item"><a class="nav-link" href="my_dashboard">My_dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Tournament Info -->
+  <div class="container mt-4">
+    <div class="card shadow-lg p-4">
+      <h2 class="text-primary">{{data.name}}</h2>
+      <p><strong> Start Date:</strong> {{data.start_date}}</p>
+      <p><strong> Start Date:</strong> {{data.start_date}}</p>
+      <p><strong> End Date:</strong> {{data.end_data}}</p>
+      <p><strong> Registration Deadline:</strong> {{data.registration_deadline}}</p>
+      <p><strong> Location:</strong> {{data.location}}</p>
+      <hr>
+      <h5>Description:</h5>
+      <p>{{data.description}}</p>
+      <div class="mt-3">
+        <a href="/tournament_register/{{data.tournament_id}}" class="btn btn-success">Register Now</a>
+        <a href="/tournament" class="btn btn-secondary">Back to List</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

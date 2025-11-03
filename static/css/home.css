@@ -1,0 +1,273 @@
+/* Tournament Finder - Home Page Styles */
+:root {
+
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --dark-color: #212529;
+  --light-color: #f8f9fa;
+  --success-color: #198754;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: #fafafa;
+}
+
+/* Navigation Enhancement */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Hero Section Styling */
+.hero {
+  background: var(--gradient-bg);
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 15px;
+  margin: 2rem 0;
+  box-shadow: var(--card-shadow);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+#searchText {
+  border-radius: 25px;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+}
+
+#searchText:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+  transform: translateY(-2px);
+  box-shadow: var(--hover-shadow);
+}
+
+/* Section Styling */
+.section {
+  margin: 3rem 0;
+}
+
+.section h3 {
+  font-weight: 700;
+  color: var(--dark-color);
+  font-size: 1.75rem;
+}
+
+.link-primary {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.link-primary:hover {
+  color: #0b5ed7;
+  text-decoration: underline;
+}
+
+/* Card Styling */
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+.badge-category {
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.text-muted-small {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+.btn-outline-primary {
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+/* Footer Styling */
+.footer {
+  background-color: var(--dark-color);
+  color: white;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+    margin: 1rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  #searchText {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+
+  .d-flex.justify-content-center {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .section h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0b5ed7;
+}
+/* Carousel Custom Styling */
+.carousel-custom {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Make images look nice */
+.carousel-custom img {
+  height: 400px;         /* adjust height as needed */
+  object-fit: cover;     /* ensures images scale nicely */
+}
+
+/* Caption styling */
+.carousel-custom .carousel-caption {
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent bg */
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Indicators styling */
+.carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+/* Control icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100% 100%;
+  filter: invert(1);  /* makes arrows white */
+}

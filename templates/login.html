@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In Page</title>
+    <link rel="stylesheet" href="{% static 'css/login.css'%}">
+</head>
+<body>
+    <div class="heading">
+        <h1 style="color: rgb(79, 76, 76);">Tournament</h1>
+        <h1 style="color: rgb(11, 142, 147);">Finder</h1>
+    </div>
+    <p id="head" style="color: black;">NDR Acadamy</p>
+
+    <div class="signup-container">
+        <form class="signup-form" method="POST">
+            {% csrf_token %}
+            <h2>Sign In</h2>
+
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required /><br>
+
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required /><br>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <label>
+                    <input type="checkbox" id="remember" style="margin-right: 5px; transform: scale(1);">
+                    Remember me
+                </label>
+                <a href="#" style="color: #667eea; text-decoration: none; font-size: 0.9rem;">Forgot password?</a>
+            </div>
+
+            <button type="submit" id="signin-btn">Sign In</button>
+
+            <p class="login-link">
+                Don't have an account?
+            </p>
+            <button type="button" id="signup-btn" onclick="window.location.href='signup.html'">SIGN UP</button>
+        </form>
+    </div>
