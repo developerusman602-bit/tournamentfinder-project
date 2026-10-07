@@ -13,7 +13,8 @@ def login(request):
     return render(request,'user_dashboard.html')
 
 def home(request):
-    return render(request,'home.html')
+    t_obj = TournamentModel.objects.all()
+    return render(request,'home.html',{'tournaments':t_obj})
 
 def register(request):
     if request.method == 'POST':
@@ -210,4 +211,19 @@ def delete_registration(request, registration_id):
     registration.delete()
     return redirect('/my_dashboard')
 
+def edit_profile(request):
+    user = request.user  # or fetch from session
+    if request.method == 'POST':
+        fullname = request.POST.get('fullname')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+        user.fullname = fullname
+        user.email = email
+        if password:
+            user.set_password(password)
+        user.save()
+        messages.success(request, "Profile updated successfully!")
+        return redirect('/my_dashboard')
+    return render(request, 'user/edit_profile.html', {'data': user})
 

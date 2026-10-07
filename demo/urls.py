@@ -18,15 +18,19 @@ from django.contrib import admin
 from django.urls import path
 from userapp import views
 from userapp.views import about
+from userapp.views_api import get_tournaments, get_tournament
+from userapp.views_api import get_register
+from userapp.views_api import register_tournament
+from userapp.views_api import register_user
+from userapp.views_api import get_user
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login',views.login_view),
     path('',views.home),
-    path('login',views.register),
     path('organizer_dashboard/', views.organizer_dashboard, name='organizer_dashboard'),
-    path('tournament',views.tournament),
-    path('tournament_details/<int:id>',views.view_tournament),
+    path('tournament/',views.tournament),
+    path('tournament_details/<int:id>',views.view_tournament,name='tournament_details'),
     path('book_add',views.add_book),
     path('tournament_register/<int:id>', views.register_tournament),
     path('login', views.login_view, name="login"),
@@ -39,6 +43,13 @@ urlpatterns = [
     path('update_tournament/<int:tournament_id>/', views.update_tournament, name='update_tournament'),
     path('delete_tournament/<int:tournament_id>/', views.delete_tournament, name='delete_tournament'),
     path('delete_registration/<int:registration_id>/', views.delete_registration, name='delete_registration'),
+    path('edit_profile/', views.edit_profile, name='edit_profile'),
+    path('api/tournaments/', get_tournaments),
+    path('api/tournament/<int:id>/', get_tournament),
+    path('api/register/',get_register),
+    path("api/register/", register_tournament, name="register-tournament"),
+    path("api/users/register/", register_user),
+    path("api/users/<int:id>/", get_user),
 ]
 
 
